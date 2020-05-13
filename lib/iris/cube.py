@@ -1064,7 +1064,7 @@ bound=(1994-12-01 00:00:00, 1998-12-01 00:00:00)
     def _check_multi_dim_metadata(self, metadata, data_dims):
         # Convert to a tuple of integers
         if data_dims is None:
-            data_dims = tuple()
+            data_dims = ()
         elif isinstance(data_dims, Container):
             data_dims = tuple(int(d) for d in data_dims)
         else:
