@@ -442,7 +442,7 @@ def _reduce_points_and_bounds(points, lower_and_upper_bounds=None):
     used_dims = tuple(
         i_dim for i_dim in range(points.ndim) if points.shape[i_dim] > 1
     )
-    reshape_inds = tuple([points.shape[dim] for dim in used_dims])
+    reshape_inds = tuple(points.shape[dim] for dim in used_dims)
     points = points.reshape(reshape_inds)
     points = points.astype(orig_points_dtype)
     if bounds is not None:
